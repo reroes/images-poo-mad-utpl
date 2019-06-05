@@ -1,0 +1,73 @@
+// se realiza la implementación de dos clases Libro y Ejecutar
+
+
+Clase Libro 
+  // se declaran datos o atributos
+  nombreLibro: Cadena 
+  nombresAutores: <<Arreglo>>[2] Cadena // atributo tipo arreglo de cadenas
+  
+  Método establecerNombresAutores(lista_nom []: <<Arreglo>> Cadena)
+    a.  nombresAutores = lista_nom
+    b.  Fin Método establecerNombresAutores
+
+  Método obtenerNombresAutores() : <<Arreglo>> [] Cadena
+    a.  return nombresAutores
+    b.  Fin Método obtenerNombresAutores
+
+  Método establecerNombreLibro(c: Cadena)
+    a.  nombreLibro = c
+    b.  Fin Método establecerNombreLibro
+  
+  Método obtenerNombreLibro() : Cadena
+    a.  return nombreLibro
+    b.  Fin Método obtenerNombreLibro
+
+Fin Clase Libro
+
+
+
+Clase Ejecutar
+    1.  Método principal()
+        a.  // Declarar Variables
+            lista_valores: <<Arreglo>>[5] Cadena
+            valorNombre: Cadena
+
+        b.  lista_valores[0] = "Roger Cadenhead"
+            lista_valores[1] = "Leobardo López"
+
+            // en nuestra mente imaginamos la lista de valores como
+            // un arreglo de cadenas:
+            // [ "Roger Cadenhead", "Leobardo López" ]
+            //      0                     1           // posiciones del arreglo
+        
+        c.  // Declarar un objeto de tipo Libro
+            Libro miLibro = new Libro()
+            // hago uso del método que permite asignar valores
+            // al atributo nombresAutores
+            miLibro.establecerNombresAutores(lista_valores)
+
+        d.  // para presentar los datos guardados:
+            // hago uso de un ciclo repetitivo para recorrer los valores
+            // asignados al atributo nombresAutores, a través del método
+            // obtenerNombresAutores
+            // Considerar que dicho método devulve el valor del atributo
+            // nombresAutores del objeto miLibro; además dicho atributo es de
+            // tipo arreglo de cadenas.
+
+            for i = 0; i<2; i++
+              // en una variable tipo cadena recibo cada uno de los valores
+              // de las posiciones que se tiene almacenado en el 
+              // arreglo que devuelve el método obtenerNombresAutores en una 
+              // posición determinada; para el objeto miLibro
+              // La posición en el ciclo me lo da la variable i
+              // Ejemplo: si el valor de i es 0, estamos accediendo a:
+              // Roger Cadenhead
+
+              valorNombre = miLibro.obtenerNombresAutores()[i]
+              Imprimir "Autor :", valorNombre
+            endfor
+    Fin Método principal
+  Fin Clase Ejecutar
+Fin
+</pre>
+
