@@ -1,0 +1,111 @@
+Clase abstracta DeportistaAltoRendimiento 
+    // Declarar atributos
+    #nombre: Cadena 
+    #incentivoMensual: Real 
+    
+    // Declarar métodos
+    Método establecerNombre(l:Cadena)
+      a.  nombre = l
+      b.  Fin Método establecerNombre
+      
+    Método obtenerNombre() : Cadena
+      a.  return nombre
+      b.  Fin Método obtenerrNombre
+
+    Método abstracto calcularIncentivo()
+      // método sin impĺementar
+      Fin Método calcularIncentivo
+
+    Método obtenerIncentivo() : Real
+      a.  return incentivoMensual
+      b.  Fin Método obtenerIncentivo
+
+Fin Clase DeportistaAltoRendimiento 
+
+Clase JugadorFutbol hereda de DeportistaAltoRendimiento
+    // Declarar atributos
+    numeroPartidosJugados: Entero
+    numeroGoles: Entero
+
+    // Declarar métodos
+    Método establecerNumeroPartidosJugados(g: Entero)
+      a. numeroPartidosJugados = g
+      b. Fin Método establecerNumeroPartidosJugados
+    
+    Método obtenerNumeroPartidosJugados() : Entero
+      a. return numeroPartidosJugados
+      b. Fin Método obtenerNumeroPartidosJugados
+    
+    Método establecerNumeroGoles(g: Entero)
+      a. numeroGoles = g
+      b. Fin Método establecerNumeroGoles
+    
+    Método obtenerNumeroGoles() : Entero
+      a. return numeroGoles
+      b. Fin Método obtenerNumeroGoles
+    
+    Método calcularIncentivo()
+      a. incentivoMensual = (numeroGoles * 500) + (numeroPartidosJugados * 100)
+      b. Fin Método calcularIncentivo
+
+Fin Clase JugadorFutbol
+
+
+Clase Atleta hereda de DeportistaAltoRendimiento
+    // Declarar atributos
+    numeroCompetencias: Entero
+
+    // Declarar métodos
+    Método establecerNumeroCompetencias(g: Entero)
+      a. numeroCompetencias = g
+      b. Fin Método establecerNumeroCompetencias
+    
+    Método obtenerNumeroCompetencias() : Entero
+      a. return numeroCompetencias
+      b. Fin Método obtenerNumeroCompetencias
+    
+    Método calcularIncentivo()
+      a. incentivoMensual = (numeroCompetencias * 1000) + 500
+      b. Fin Método calcularIncentivo
+
+Fin Clase Atleta
+
+
+Clase EjecutaPolimorfismo
+    Método principal()
+      // Se crea un arreglo de tipo DeportistaAltoRendimiento (que almacene
+      // objetos que hereden de la clase DeportistaAltoRendimiento)
+      deportista: <<Arreglo>> [2] DeportistaAltoRendimiento 
+      JugadorFutbol jugador = new JugadorFutbol()
+      Atleta atleta = new Atleta()
+
+      jugador.establecerNombre("Alex Aguinaga")
+      jugador.establecerNumeroPartidosJugados(2)
+      jugador.establecerNumeroGoles(1)
+
+      atleta.establecerNombre("Alexandra Tenorio")
+      atleta.establecerNumeroCompetencias(2)
+      
+      // se agrega un objeto de tipo JugadorFutbol
+      // al arreglo de tipo DeportistaAltoRendimiento
+      deportista[0] = jugador
+      
+      // se agrega un objeto de tipo Atleta
+      // al arreglo de tipo DeportistaAltoRendimiento
+      deportista[1] = atleta 
+
+      for i = 0; i<2; i++
+          // se llama al método abstracto
+          // de las clases del arreglo
+          // Ellas de manera obligatoria la 
+          // IMPLEMENTARON dicho método por heredar
+          // de la clase abstracta
+          deportista[i].calcularIncentivo()
+
+          Imprimir "Nombre Deportista :", deportista[i].obtenerNombre()
+          Imprimir "Incentivo Mensual :", deportista[i].obtenerIncentivo()
+      endfor
+
+    Fin Método principal
+Fin Clase Ejecutar
+
