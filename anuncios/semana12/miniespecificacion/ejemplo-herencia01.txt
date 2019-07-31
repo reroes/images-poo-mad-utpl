@@ -1,0 +1,92 @@
+
+Algoritmo EJEMPLO DE MINIESPECIFICACIÓN APLICANDO HERENCIA 
+
+  Clase Tipo 
+    1.  Declarar
+        // se declaran datos o atributos con visibilidad protegido
+        # miatributo1: Cadena
+        # miatributo2: Cadena
+
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerMiAtributo1(nom: Cadena)
+        a.  miatributo1 = nom
+        b.  Fin Método establecerMiAtributo1
+  
+    3.  Método establecerMiAtributo2(ape: Cadena)
+        a.  miatributo2 = ape
+        b.  Fin Método establecerMiAtributo2
+    
+    //  Métodos obtener para los datos o atributos de la clase
+    4.  Método obtenerMiAtributo1() : Cadena
+        a.  return miatributo1  
+        b.  Fin Método obtenerMiAtributo1  
+ 
+    5.  Método obtenerMiAtributo2() : Cadena
+        a.  return miatributo2  
+        b.  Fin Método obtenerMiAtributo2  
+   
+  Fin Clase Tipo 
+  
+  Clase TipoBasico hereda de Tipo 
+    1.  Declarar
+        + miatributo3: Cadena
+
+    //  Métodos establecer y calcular para los datos o atributos de la clase
+    2.  Método establecerMiAtributo3(n3: Cadena)
+        a.  miatributo3 = n3
+        b.  Fin Método establecerMiAtributo3
+
+    //  Métodos obtener para los datos o atributos de la clase
+    4.  Método obtenerMiAtributo3() : Cadena
+        a.  return miatributo3  
+        b.  Fin Método obtenerMiAtributo3  
+ 
+  Fin Clase TipoBasico 
+  
+
+  Clase Ejecuta
+    1.  Método principal()
+        // Se declaran variables
+        a.  Declarar Variables
+            att1: Cadena 
+            att2: Cadena 
+            att3: Cadena 
+        
+        b.  // Incio ciclo repetitivo
+            do 
+            // Se imprime mensaje en pantalla para solicitar
+            // el ingreso de información
+            3.  Solicitar att1, att2, att3
+            4.  Leer att1, att2, att3
+            
+            // Declarar, crear e iniciar objeto tipo TipoBasico
+            5.  TipoBasico claseHija = new TipoBasico()
+            // se hace uso de los métodos establecer para asignar valores
+            // a los datos (atributos) del objeto
+            6.  Establecer:  
+                  claseHija.establecerMiAtributo1(att1)
+                  claseHija.establecerMiAtributo2(att2)
+                  claseHija.establecerMiAtributo3(att3)
+
+            // se hace uso de los métodos obtener del objeto para presentar
+            // los valores que se necesite en pantalla
+            7.  Imprimir: "Datos ingresados son: "
+                      claseHija.obtenerMiAtributo1()
+                      claseHija.obtenerMiAtributo2()
+                      claseHija.obtenerMiAtributo3()
+
+            8. // Se pregunta si se desea ingresar más objetos
+               Imprimir "Desea ingresar más objetos de TipoBase. 
+               Digite la letra S para continuar o digite la letra N para salir 
+               del proceso"
+            9. // se captura el valor ingresado por el usuario para la variable
+               // carácter 
+               Leer continuar
+        // se pregunta si el valor continuar es igual al valor "S", se sigue en 
+        // ciclo repetitivo; si el valor es distinto de "S", se sale del ciclo
+        // repetitivo
+        c.  while continuar == "S" 
+        d.  Fin Método principal
+    
+  Fin Clase Ejecuta
+Fin 
