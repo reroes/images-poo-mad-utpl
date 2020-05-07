@@ -1,3 +1,3 @@
-# Recuros y ejercicios de Programación Orientada a Objetos
+## Recuros y ejercicios de Programación Orientada a Objetos
 
-## Repositorio de información de tipo académico
+### Repositorio de información de tipo académico
